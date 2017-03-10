@@ -2,4 +2,4 @@
 Prework - Tip Calculator
 
 
-![PreWork](https://media.giphy.com/media/JjyjRs4TBygCI/giphy.gif "PreWork")
+![PreWork](https://github.com/thanhcs94/tipcalculator-react-native/blob/master/screen_record.gif "PreWork")
