@@ -111,12 +111,13 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     backgroundColor: '#F5FCFF',
     paddingLeft: 16,
-    paddingRight:16
+    paddingRight:16,
+    paddingTop:20,
   },
   texttitle:{
     color:'black',
     fontSize:30,
-    marginTop:40,
+    marginTop:50,
     marginBottom: 30,
     textAlign:'center',
     fontWeight:'bold',

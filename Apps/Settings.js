@@ -13,7 +13,8 @@ import {
   TextInput,
   Navigator,
   TouchableOpacity,
-  Picker,AsyncStorage,
+  Picker,
+  AsyncStorage,
 } from 'react-native';
 
 
@@ -71,7 +72,7 @@ export default class Settings extends Component {
         <View>
           <Text style={{fontSize:25}}>Scene Transitions</Text>
           <Picker
-          selectedValue={this.state.screnTransition}
+           selectedValue={this.state.screnTransition}
             onValueChange={(scene) => this.setSelectSceneTransition(scene)}>
             <Picker.Item label="FloatFromRight" value="FloatFromRight" />
             <Picker.Item label="FloatFromLeft" value="FloatFromLeft" />

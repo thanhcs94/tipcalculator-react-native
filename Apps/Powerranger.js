@@ -23,16 +23,16 @@ var NavigationBarRouteMapper = {
     return
   },
   RightButton: (route, navigator, index, navState) => {
-    if(route.id != 'CalculatorPage'){
+    if(route.id != 'Calculator'){
       return (
-        <TouchableOpacity style={styles.tabbarHeadr} onPress={() => navigator.pop()}>
-          <Text style={styles.rightButton}>Save</Text>
+        <TouchableOpacity onPress={() => navigator.pop()}>
+          <Text style={styles.btnControl}>Save</Text>
         </TouchableOpacity>
       );
     }else{
       return (
-        <TouchableOpacity style={styles.tabbarHeadr} onPress={() => navigator.push({id: 'Settings'})}>
-          <Text style={styles.rightButton}>Settings</Text>
+        <TouchableOpacity onPress={() => navigator.push({id: 'Settings'})}>
+          <Text style={styles.btnControl}>Settings</Text>
         </TouchableOpacity>
       );
     }
@@ -41,7 +41,7 @@ var NavigationBarRouteMapper = {
     return;
   },
 }
-export default class Powerranger extends Component {
+export default class Powerrange extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -51,11 +51,11 @@ export default class Powerranger extends Component {
   render() {
     return (
         <Navigator
-          initialRoute={{id: 'CalculatorPage'}}
+          initialRoute={{id: 'Calculator'}}
           renderScene={this.renderScene.bind(this)}
           navigationBar={
               <Navigator.NavigationBar
-                    style = { styles.navigationBar }
+                    style = { {padding: 8,flex:1,marginBottom:8} }
                     routeMapper={NavigationBarRouteMapper} />}
           configureScene={this.configureScene.bind(this)}
         />
@@ -65,10 +65,10 @@ export default class Powerranger extends Component {
   // To navigate to page based on page ID
   renderScene(route, navigator) {
     switch (route.id) {
-            case 'CalculatorPage':
+            case 'Calculator':
               return <Calculator/>
               break;
-          case 'Setting':
+          case 'Settings':
               return <Settings/>
               break;
           default:
@@ -91,19 +91,15 @@ export default class Powerranger extends Component {
         sceneTransition : sceneTransitionValue
       });
     }catch(error){
-      console.log("opps");
+      console.log("Hmm, something when wrong when get data..." + error);
     }
   }
 }
 
 
 const styles = StyleSheet.create({
-   navigationBar: {
-      padding: 5,
-      flex:1,
-      marginBottom:5
-   },
-   rightButton: {
+
+   btnControl: {
       color: '#000',
       marginTop: 10,
       marginRight: 10,
